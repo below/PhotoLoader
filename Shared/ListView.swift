@@ -16,21 +16,25 @@ struct ListView: View {
     @StateObject var photoLoader = Remote<[PhotoInfo]>(url: URL(string: "https://picsum.photos/v2/list")!)
     var body: some View {
         NavigationView {
-            if let list = photoLoader.object {
-                List {
-                    ForEach(list) { item in
-                        Text(item.author)
+            ZStack {
+                if let list = photoLoader.object {
+                    List {
+                        ForEach(list) { item in
+                            Text(item.author)
+                        }
+                        .listStyle(.plain)
+                        .refreshable {
+                            await photoLoader.loadData()
+                        }
                     }
-                    .refreshable {
-                        await photoLoader.loadData()
-                    }
+                } else {
+                    Text ("Loading …")
                 }
-            } else {
-                Text ("Loading …")
             }
-        }
-        .task {
-            await self.photoLoader.loadData()
+            .navigationTitle("Photos")
+            .task {
+                await self.photoLoader.loadData()
+            }
         }
     }
 }
