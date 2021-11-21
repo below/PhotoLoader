@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PhotoInfo: Codable {
+struct PhotoInfo {
     let id: String
     let author: String
     let width: Int
@@ -15,3 +15,7 @@ struct PhotoInfo: Codable {
     let url: String
     let download_url: String
 }
+
+extension PhotoInfo: Codable {}
+
+extension PhotoInfo: Identifiable {}

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB036B152747FA02004B85C4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB036B142747FA02004B85C4 /* ListView.swift */; };
+		CB036B162747FA02004B85C4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB036B142747FA02004B85C4 /* ListView.swift */; };
 		CBDDB69527451F2400B0CB35 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB69427451F2400B0CB35 /* Tests_iOS.swift */; };
 		CBDDB69727451F2400B0CB35 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB69627451F2400B0CB35 /* Tests_iOSLaunchTests.swift */; };
 		CBDDB6A127451F2400B0CB35 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB6A027451F2400B0CB35 /* Tests_macOS.swift */; };
@@ -20,6 +22,8 @@
 		CBDDB6BF27451F8B00B0CB35 /* PhotoLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB6BE27451F8B00B0CB35 /* PhotoLoaderTests.swift */; };
 		CBDDB6C62745238400B0CB35 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB6C52745238400B0CB35 /* PhotoInfo.swift */; };
 		CBDDB6C72745238400B0CB35 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB6C52745238400B0CB35 /* PhotoInfo.swift */; };
+		CBDDB6C9274530AB00B0CB35 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB6C8274530AB00B0CB35 /* Remote.swift */; };
+		CBDDB6CA274530AB00B0CB35 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB6C8274530AB00B0CB35 /* Remote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB036B142747FA02004B85C4 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		CBDDB67C27451F2000B0CB35 /* PhotoLoaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLoaderApp.swift; sourceTree = "<group>"; };
 		CBDDB67D27451F2000B0CB35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBDDB67E27451F2400B0CB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		CBDDB6BC27451F8B00B0CB35 /* PhotoLoaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoLoaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDDB6BE27451F8B00B0CB35 /* PhotoLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLoaderTests.swift; sourceTree = "<group>"; };
 		CBDDB6C52745238400B0CB35 /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
+		CBDDB6C8274530AB00B0CB35 /* Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,8 @@
 				CBDDB67C27451F2000B0CB35 /* PhotoLoaderApp.swift */,
 				CBDDB67D27451F2000B0CB35 /* ContentView.swift */,
 				CBDDB6C52745238400B0CB35 /* PhotoInfo.swift */,
+				CB036B142747FA02004B85C4 /* ListView.swift */,
+				CBDDB6C8274530AB00B0CB35 /* Remote.swift */,
 				CBDDB67E27451F2400B0CB35 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -362,7 +370,9 @@
 			files = (
 				CBDDB6C62745238400B0CB35 /* PhotoInfo.swift in Sources */,
 				CBDDB6A627451F2400B0CB35 /* ContentView.swift in Sources */,
+				CB036B152747FA02004B85C4 /* ListView.swift in Sources */,
 				CBDDB6A427451F2400B0CB35 /* PhotoLoaderApp.swift in Sources */,
+				CBDDB6C9274530AB00B0CB35 /* Remote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +382,9 @@
 			files = (
 				CBDDB6C72745238400B0CB35 /* PhotoInfo.swift in Sources */,
 				CBDDB6A727451F2400B0CB35 /* ContentView.swift in Sources */,
+				CB036B162747FA02004B85C4 /* ListView.swift in Sources */,
 				CBDDB6A527451F2400B0CB35 /* PhotoLoaderApp.swift in Sources */,
+				CBDDB6CA274530AB00B0CB35 /* Remote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
