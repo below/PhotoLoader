@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CB036B152747FA02004B85C4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB036B142747FA02004B85C4 /* ListView.swift */; };
 		CB036B162747FA02004B85C4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB036B142747FA02004B85C4 /* ListView.swift */; };
+		CB036B5C274BA617004B85C4 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB036B5B274BA617004B85C4 /* PhotoView.swift */; };
+		CB036B5D274BA618004B85C4 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB036B5B274BA617004B85C4 /* PhotoView.swift */; };
+		CB036B5E274BA9C8004B85C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB036B5A274BA41A004B85C4 /* Preview Assets.xcassets */; };
+		CB036B5F274BA9C9004B85C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB036B5A274BA41A004B85C4 /* Preview Assets.xcassets */; };
 		CBDDB69527451F2400B0CB35 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB69427451F2400B0CB35 /* Tests_iOS.swift */; };
 		CBDDB69727451F2400B0CB35 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB69627451F2400B0CB35 /* Tests_iOSLaunchTests.swift */; };
 		CBDDB6A127451F2400B0CB35 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDDB6A027451F2400B0CB35 /* Tests_macOS.swift */; };
@@ -52,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		CB036B142747FA02004B85C4 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		CB036B5A274BA41A004B85C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB036B5B274BA617004B85C4 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		CBDDB67C27451F2000B0CB35 /* PhotoLoaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLoaderApp.swift; sourceTree = "<group>"; };
 		CBDDB67D27451F2000B0CB35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBDDB67E27451F2400B0CB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,10 +115,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB036B59274BA3D2004B85C4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CB036B5A274BA41A004B85C4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		CBDDB67627451F2000B0CB35 = {
 			isa = PBXGroup;
 			children = (
 				CBDDB67B27451F2000B0CB35 /* Shared */,
+				CB036B59274BA3D2004B85C4 /* Preview Content */,
 				CBDDB68A27451F2400B0CB35 /* macOS */,
 				CBDDB69327451F2400B0CB35 /* Tests iOS */,
 				CBDDB69F27451F2400B0CB35 /* Tests macOS */,
@@ -127,8 +142,9 @@
 				CBDDB67C27451F2000B0CB35 /* PhotoLoaderApp.swift */,
 				CBDDB67D27451F2000B0CB35 /* ContentView.swift */,
 				CBDDB6C52745238400B0CB35 /* PhotoInfo.swift */,
-				CB036B142747FA02004B85C4 /* ListView.swift */,
 				CBDDB6C8274530AB00B0CB35 /* Remote.swift */,
+				CB036B142747FA02004B85C4 /* ListView.swift */,
+				CB036B5B274BA617004B85C4 /* PhotoView.swift */,
 				CBDDB67E27451F2400B0CB35 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -328,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB036B5E274BA9C8004B85C4 /* Preview Assets.xcassets in Resources */,
 				CBDDB6A827451F2400B0CB35 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB036B5F274BA9C9004B85C4 /* Preview Assets.xcassets in Resources */,
 				CBDDB6A927451F2400B0CB35 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +389,7 @@
 				CBDDB6C62745238400B0CB35 /* PhotoInfo.swift in Sources */,
 				CBDDB6A627451F2400B0CB35 /* ContentView.swift in Sources */,
 				CB036B152747FA02004B85C4 /* ListView.swift in Sources */,
+				CB036B5C274BA617004B85C4 /* PhotoView.swift in Sources */,
 				CBDDB6A427451F2400B0CB35 /* PhotoLoaderApp.swift in Sources */,
 				CBDDB6C9274530AB00B0CB35 /* Remote.swift in Sources */,
 			);
@@ -383,6 +402,7 @@
 				CBDDB6C72745238400B0CB35 /* PhotoInfo.swift in Sources */,
 				CBDDB6A727451F2400B0CB35 /* ContentView.swift in Sources */,
 				CB036B162747FA02004B85C4 /* ListView.swift in Sources */,
+				CB036B5D274BA618004B85C4 /* PhotoView.swift in Sources */,
 				CBDDB6A527451F2400B0CB35 /* PhotoLoaderApp.swift in Sources */,
 				CBDDB6CA274530AB00B0CB35 /* Remote.swift in Sources */,
 			);
@@ -553,6 +573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = M3DTZN9V9B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -583,6 +604,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = M3DTZN9V9B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

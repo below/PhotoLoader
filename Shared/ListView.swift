@@ -13,19 +13,27 @@ protocol DisplayItem {
 }
 
 struct ListView: View {
-    @StateObject var photoLoader = Remote<[PhotoInfo]>(url: URL(string: "https://picsum.photos/v2/list")!)
+    @StateObject var photoLoader = Remote(url: URL(string: "https://picsum.photos/v2/list")!) { data in
+        try? JSONDecoder().decode([PhotoInfo].self, from: data)
+    }
     var body: some View {
         NavigationView {
             ZStack {
-                if let list = photoLoader.object {
+                if let list = photoLoader.value {
                     List {
                         ForEach(list) { item in
-                            Text(item.author)
+                            NavigationLink(destination: {
+                                PhotoView(imageLoader: Remote(url:URL(string: item.download_url)!) { data in
+                                    UIImage(data: data)
+                                })
+                            },
+                                           label: { Text(item.author) }
+                            )
                         }
-                        .listStyle(.plain)
-                        .refreshable {
-                            await photoLoader.loadData()
-                        }
+                    }
+                    .listStyle(.plain)
+                    .refreshable {
+                        await photoLoader.loadData()
                     }
                 } else {
                     Text ("Loading …")

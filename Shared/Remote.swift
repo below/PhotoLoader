@@ -8,22 +8,20 @@
 import Foundation
 
 @MainActor
-class Remote<T: Codable>: ObservableObject {
+class Remote<T>: ObservableObject {
     let url: URL
-    @Published private(set) var object: T?
-    init(url: URL) {
+    let transform: (Data) -> T?
+    @Published private(set) var value: T?
+    init(url: URL, transform: @escaping (Data) -> T?) {
         self.url = url
-    }
-
-    func decode(data: Data) throws -> T {
-        return try JSONDecoder().decode(T.self, from: data)
+        self.transform = transform
     }
 
     func loadData() async {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
-            let object = try decode(data: data)
-            self.object = object
+            let object = transform(data)
+            self.value = object
         } catch {
             debugPrint("Error \(error)")
         }
