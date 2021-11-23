@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 class Remote<T>: ObservableObject {
     let url: URL
     let transform: (Data) -> T?
@@ -17,8 +16,14 @@ class Remote<T>: ObservableObject {
         self.transform = transform
     }
 
+    @MainActor
     func loadData() async {
+        if value != nil {
+            return
+        }
         do {
+            let name = url.lastPathComponent
+            debugPrint("Loading \(name)")
             let (data, _) = try await URLSession.shared.data(from: url)
             let object = transform(data)
             self.value = object

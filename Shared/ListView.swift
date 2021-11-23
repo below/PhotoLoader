@@ -20,15 +20,14 @@ struct ListView: View {
         NavigationView {
             ZStack {
                 if let list = photoLoader.value {
+                    let itemList = list.map { photoInfo in
+                        ListItem(item: photoInfo)
+                    }
                     List {
-                        ForEach(list) { item in
-                            NavigationLink(destination: {
-                                PhotoView(imageLoader: Remote(url:URL(string: item.download_url)!) { data in
-                                    UIImage(data: data)
-                                })
-                            },
-                                           label: { Text(item.author) }
-                            )
+                        ForEach(itemList) { listItem in
+                            ListItemView(item: listItem.item,
+
+                                         imageLoader: listItem.imageLoader)
                         }
                     }
                     .listStyle(.plain)
@@ -36,7 +35,7 @@ struct ListView: View {
                         await photoLoader.loadData()
                     }
                 } else {
-                    Text ("Loading …")
+                    ProgressView()
                 }
             }
             .navigationTitle("Photos")
@@ -44,6 +43,39 @@ struct ListView: View {
                 await self.photoLoader.loadData()
             }
         }
+    }
+}
+
+class ListItem: Identifiable, ObservableObject {
+    let item: PhotoInfo
+    var imageLoader: Remote<UIImage>
+    var id: String { self.item.id }
+
+    init(item: PhotoInfo) {
+        self.item = item
+        self.imageLoader = Remote(url: URL(string:item.download_url)!) { data in
+            UIImage(data: data)
+        }
+    }
+}
+
+struct ListItemView: View {
+    let item: PhotoInfo
+    @ObservedObject var imageLoader: Remote<UIImage>
+
+    var body: some View {
+        NavigationLink(destination: {
+            PhotoView(imageLoader: imageLoader)
+        },
+                       label: {
+            ListPhotoView(uiImage: imageLoader.value,
+
+                          title: item.author)
+        }
+        )
+            .task {
+                await self.imageLoader.loadData()
+            }
     }
 }
 
