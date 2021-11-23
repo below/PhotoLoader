@@ -20,14 +20,13 @@ struct ListView: View {
         NavigationView {
             ZStack {
                 if let list = photoLoader.value {
-                    let itemList = list.map { photoInfo in
-                        ListItem(item: photoInfo)
-                    }
                     List {
-                        ForEach(itemList) { listItem in
-                            ListItemView(item: listItem.item,
+                        ForEach(list) { item in
+                            ListItemView(title: item.author,
 
-                                         imageLoader: listItem.imageLoader)
+                                         imageLoader: Remote(url: URL(string: item.download_url)!, transform: { data in
+                                UIImage(data: data)
+                            }))
                         }
                     }
                     .listStyle(.plain)
@@ -60,7 +59,7 @@ class ListItem: Identifiable, ObservableObject {
 }
 
 struct ListItemView: View {
-    let item: PhotoInfo
+    let title: String
     @ObservedObject var imageLoader: Remote<UIImage>
 
     var body: some View {
@@ -70,7 +69,7 @@ struct ListItemView: View {
                        label: {
             ListPhotoView(uiImage: imageLoader.value,
 
-                          title: item.author)
+                          title: title)
         }
         )
             .task {
