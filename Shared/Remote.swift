@@ -22,9 +22,10 @@ class Remote<T>: ObservableObject {
             return
         }
         do {
-            let name = url.lastPathComponent
+            let name = url.path
             debugPrint("Loading \(name)")
             let (data, _) = try await URLSession.shared.data(from: url)
+            debugPrint("-> Finished \(name)")
             let object = transform(data)
             self.value = object
         } catch {
