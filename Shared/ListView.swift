@@ -57,7 +57,7 @@ class ListItem: Identifiable, ObservableObject {
 
 struct ListItemView: View {
     let title: String
-    @ObservedObject var imageLoader: Remote<UIImage>
+    @StateObject var imageLoader: Remote<UIImage>
 
     var body: some View {
         NavigationLink(destination: {
