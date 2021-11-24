@@ -38,9 +38,6 @@ struct ListView: View {
                 }
             }
             .navigationTitle("Photos")
-            .task {
-                await self.photoLoader.loadData()
-            }
         }
     }
 }
@@ -72,9 +69,6 @@ struct ListItemView: View {
                           title: title)
         }
         )
-            .task {
-                await self.imageLoader.loadData()
-            }
     }
 }
 

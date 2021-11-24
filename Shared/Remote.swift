@@ -6,23 +6,29 @@
 //
 
 import Foundation
+import Combine
 
 class Remote<T>: ObservableObject {
     let url: URL
     let transform: (Data) -> T?
+    var subscriptionAlert: AnyCancellable?
+
     @Published private(set) var value: T?
     init(url: URL, transform: @escaping (Data) -> T?) {
         self.url = url
         self.transform = transform
+        subscriptionAlert = self.objectWillChange.handleEvents(receiveSubscription:  { s in
+            Task() {
+                await self.loadData()
+            }
+        })
+            .sink { _ in return }
     }
 
     @MainActor
     func loadData() async {
-        if value != nil {
-            return
-        }
+        let name = url.path
         do {
-            let name = url.path
             debugPrint("Loading \(name)")
             let (data, _) = try await URLSession.shared.data(from: url)
             debugPrint("-> Finished \(name)")

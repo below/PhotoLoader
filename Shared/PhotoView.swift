@@ -20,8 +20,5 @@ struct PhotoView: View {
             Text ("Loading")
         }
         }
-        .task {
-            await self.imageLoader.loadData()
-        }
     }
 }
