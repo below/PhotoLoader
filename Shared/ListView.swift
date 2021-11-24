@@ -42,19 +42,6 @@ struct ListView: View {
     }
 }
 
-class ListItem: Identifiable, ObservableObject {
-    let item: PhotoInfo
-    var imageLoader: Remote<UIImage>
-    var id: String { self.item.id }
-
-    init(item: PhotoInfo) {
-        self.item = item
-        self.imageLoader = Remote(url: URL(string:item.download_url)!) { data in
-            UIImage(data: data)
-        }
-    }
-}
-
 struct ListItemView: View {
     let title: String
     @StateObject var imageLoader: Remote<UIImage>
