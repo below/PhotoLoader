@@ -17,7 +17,7 @@ class Remote<T>: ObservableObject {
     init(url: URL, transform: @escaping (Data) -> T?) {
         self.url = url
         self.transform = transform
-        subscriptionAlert = self.objectWillChange.handleEvents(receiveSubscription:  { s in
+        subscriptionAlert = self.objectWillChange.handleEvents(receiveSubscription: { _ in
             Task() {
                 await self.loadData()
             }
